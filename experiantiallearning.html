@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Experiantial Learning Agriculture Club</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/duckfavicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- =======================================================
+  * Template Name: MyResume
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  
+  <style>
+    /* Fix for body background - don't override the template */
+    body {
+      background: #ffffff;  /* fallback pink */
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+    
+    /* main container – mimics "image.png" background: mix pink & yellow */
+    .sandia-grid-container {
+      max-width: 1300px;
+      width: 100%;
+      margin: 0 auto;
+      background: linear-gradient(145deg, #ffd0cb 0%, #fef08a 80%, #fde68a 100%);
+      background-blend-mode: soft-light;
+      padding: 2rem 2rem 2.5rem 2rem;
+      border-radius: 3rem 3rem 2rem 2rem;
+      box-shadow: 0 25px 40px rgba(255, 105, 180, 0.4), 0 0 0 2px #fff9c4 inset, 0 0 0 5px #ffb7c5 inset;
+      border: 6px solid #fde047;
+      transition: all 0.2s;
+    }
+
+    /* header area – inspired by SANDIA: NAKIN / UDAFATIH SONG */
+    .poetic-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .poetic-header h2 {
+      font-size: 2.7rem;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #d44e79, #f39c12, #d97706);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 4px 4px 0 #ffebb5, 0 1px 0 #ffc2c2;
+      font-family: 'Trebuchet MS', 'Impact', sans-serif;
+    }
+
+    .poetic-header p {
+      font-size: 1.3rem;
+      background: #fff0d4;
+      display: inline-block;
+      padding: 0.5rem 2.5rem;
+      border-radius: 60px;
+      color: #b13e6b;
+      font-weight: 600;
+      box-shadow: 0 10px 0 #f1c40f, 0 4px 15px rgba(251, 197, 49, 0.6);
+      border: 2px solid white;
+      backdrop-filter: blur(2px);
+    }
+
+    .poetic-header small {
+      display: block;
+      margin-top: 0.8rem;
+      font-size: 1.2rem;
+      color: #9b4b6e;
+      font-style: italic;
+      background: rgba(255, 255, 200, 0.7);
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* --- 4 ROWS & 6 COLUMNS GRID (exactly as requested) --- */
+    .grid-4x6 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);  /* 6 kolom */
+      gap: 1.2rem;
+      margin: 2rem 0 1.5rem 0;
+    }
+
+    /* CARD STYLE – with LED / neon vibes but solid pink/yellow base */
+    .grid-item {
+      background: rgba(255, 255, 180, 0.7);
+      backdrop-filter: blur(2px);
+      border-radius: 24px 8px 24px 8px;  /* playful shape */
+      overflow: hidden;
+      border: 3px solid rgba(255, 240, 150, 0.9);
+      box-shadow: 0 15px 0 #f9a8d4, 0 0 0 2px #fee08b, 0 20px 25px -8px #f687b3;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .grid-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 0 #f472b6, 0 0 0 3px #fde047, 0 30px 30px -8px #fb7185;
+      border-color: #fef9c3;
+    }
+
+    /* image area */
+    .grid-item .image-wrap {
+      height: 150px;
+      overflow: hidden;
+      background: #fef3c7;
+      border-bottom: 2px solid #fde68a;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+
+    .grid-item:hover img {
+      transform: scale(1.08);
+    }
+
+    /* caption – pink & yellow mix */
+    .grid-item .caption {
+      padding: 0.8rem 0.5rem;
+      background: linear-gradient(145deg, #fef6d8, #ffd9e8);
+      color: #2d1b2d;
+      text-align: center;
+      border-top: 3px solid #ffb3c6;
+      font-weight: 600;
+    }
+
+    .caption h4 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: #b91c5c;
+      text-shadow: 0 2px 0 #ffe55c;
+      letter-spacing: 0.5px;
+      font-weight: 800;
+    }
+
+    .caption p {
+      font-size: 0.8rem;
+      color: #a13e5e;
+      background: #fff8c8;
+      display: inline-block;
+      padding: 2px 12px;
+      border-radius: 40px;
+      font-weight: 500;
+    }
+
+    /* footer with quote like "di Kota Dusun - LURIS 2011" */
+    .footer-quote {
+      text-align: right;
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-top: 2rem;
+      padding: 0 1.5rem;
+      color: #c2416e;
+      text-shadow: 3px 3px 0 #fde047;
+      border-top: 4px dotted #f97316;
+      padding-top: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-quote .left-phrase {
+      font-size: 1.2rem;
+      background: #feeec8;
+      padding: 0.3rem 1.8rem;
+      border-radius: 100px;
+      color: #a6356b;
+      border: 3px solid #fbbf24;
+    }
+
+    .footer-quote .right-year {
+      font-family: 'Courier New', monospace;
+      background: black;
+      color: #f5d742;
+      padding: 0.3rem 1.2rem;
+      border-radius: 50px;
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: 4px;
+      box-shadow: 0 0 0 3px #facc15;
+    }
+
+    /* fallback image color (jika gambar belum ada) */
+    .image-wrap {
+      background: linear-gradient(45deg, #fdd0f2, #fef08a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #b5517c;
+      font-size: 2rem;
+    }
+
+    .emoji-icon {
+      font-size: 3rem;
+      filter: drop-shadow(2px 4px 6px hotpink);
+    }
+
+    /* adjust for smaller screens */
+    @media (max-width: 950px) {
+      .grid-4x6 {
+        grid-template-columns: repeat(6, minmax(130px, 1fr));
+        gap: 0.8rem;
+      }
+      .poetic-header h2 { font-size: 2rem; }
+    }
+
+    @media (max-width: 700px) {
+      .grid-4x6 {
+        overflow-x: auto;
+        grid-template-columns: repeat(6, 160px);
+        padding-bottom: 0.5rem;
+      }
+      .sandia-grid-container {
+        padding: 1.5rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex flex-column justify-content-center">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
+        <li><a href="index.html"><i class="bi bi-person navicon"></i><span>About</span></a></li>
+        <li><a href="index.html"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
+        <li><a href="index.html"><i class="bi bi-images navicon"></i><span>Features</span></a></li>
+        <li><a href="index.html"><i class="bi bi-hdd-stack navicon"></i><span>Programs</span></a></li>
+        <li><a href="index.html"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Program Details</li>
+          </ol>
+        </nav>
+        <h1>Experiantial Learning Agriculture Club</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up">
+        
+        <!-- THE PINK & YELLOW GRID GALLERY (INSERTED HERE) -->
+        <div class="sandia-grid-container">
+          <!-- header: bumbu dari puisi gambar -->
+          <div class="poetic-header">
+            <h2>AGRICULTURE CLUB</h2>
+          </div>
+
+          <!-- 4 ROWS x 6 COLUMNS = 24 ITEMS -->
+          <div class="grid-4x6">
+            <!-- ROW 1 (item 1–6) -->
+            <!-- 1 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el1.jpg" alt="Luma" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-camera-retro\'></i>'"></div>
+              <div class="caption"><h4>Arrival</h4><p>Gathered at the hall</p></div>
+            </div>
+            <!-- 2 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el2.jpg" alt="Luma" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-tree\'></i>'"></div>
+              <div class="caption"><h4>Roselle</h4><p>Planting Roselle</p></div>
+            </div>
+            <!-- 3 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el3.jpg" alt="Luma" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-people-arrows\'></i>'"></div>
+              <div class="caption"><h4>Stingless Bee</h4><p>Learn about them</p></div>
+            </div>
+            <!-- 4 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el4.jpg" alt="Luma" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-water\'></i>'"></div>
+              <div class="caption"><h4>Stingless Bee</h4><p>Touch the bee bread</p></div>
+            </div>
+            <!-- 5 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el5.jpg" alt="Luma" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-smile\'></i>'"></div>
+              <div class="caption"><h4>Stingless Bee</h4><p>The bee home</p></div>
+            </div>
+            <!-- 6 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el6.jpg" alt="Luma" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-chalkboard\'></i>'"></div>
+              <div class="caption"><h4>Stingless Bee</h4><p>Taste the bee bread</p></div>
+            </div>
+
+            <!-- ROW 2 (7–12) -->
+            <!-- 7 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el7.jpg" alt="Shell" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-star\'></i>'"></div>
+              <div class="caption"><h4>Friends</h4><p>Cloud Selfie</p></div>
+            </div>
+            <!-- 8 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el8.jpg" alt="Luma" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-video\'></i>'"></div>
+              <div class="caption"><h4>Fishing</h4><p>Waiting for fish</p></div>
+            </div>
+            <!-- 9 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el9.jpg" alt="Luma" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-camera\'></i>'"></div>
+              <div class="caption"><h4>Fishing</h4><p>No fish</p></div>
+            </div>
+            <!-- 10 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el10.jpg" alt="Luma" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-female\'></i>'"></div>
+              <div class="caption"><h4>Fishing</h4><p>First timer</p></div>
+            </div>
+            <!-- 11 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el11.jpg" alt="Tune box" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-music\'></i>'"></div>
+              <div class="caption"><h4>Paddy</h4><p>Physical Learning</p></div>
+            </div>
+            <!-- 12 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el12.jpg" alt="Luma" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-baby\'></i>'"></div>
+              <div class="caption"><h4>Paddy</h4><p>Close up look</p></div>
+            </div>
+
+            <!-- ROW 3 (13–18) -->
+            <!-- 13 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el13.jpg" alt="Tune box" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-headphones\'></i>'"></div>
+              <div class="caption"><h4>Deer</h4><p>They are family</p></div>
+            </div>
+            <!-- 14 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el14.jpg" alt="Luma" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-crown\'></i>'"></div>
+              <div class="caption"><h4>Paddy</h4><p>Planting the paddy</p></div>
+            </div>
+            <!-- 15 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el15.jpg" alt="Luma" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-mud\'></i>'"></div>
+              <div class="caption"><h4>Paddy</h4><p>The product (rice)</p></div>
+            </div>
+            <!-- 16 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el16.jpg" alt="Luma" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-users\'></i>'"></div>
+              <div class="caption"><h4>Roselle</h4><p>Team Activity</p></div>
+            </div>
+            <!-- 17 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el17.jpg" alt="Luma" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-swimmer\'></i>'"></div>
+              <div class="caption"><h4>Lunch</h4><p>Delicious Homemade</p></div>
+            </div>
+            <!-- 18 -->
+            <div class="grid-item">
+              <div class="image-wrap"><img src="assets/img/ExperiantialLearning/el18.jpg" alt="Luma" onerror="this.parentElement.innerHTML='<i class=\'emoji-icon fas fa-smile-beam\'></i>'"></div>
+              <div class="caption"><h4>Roselle</h4><p>Playing with the soil</p></div>
+            </div>
+          </div>
+
+          <!-- footer quote -->
+          <div class="footer-quote">
+            <span class="left-phrase"><i class="fas fa-map-pin"></i> Pena Agrofarm</span>
+          </div>
+        </div>
+        
+        <!-- ORIGINAL CONTENT CONTINUES HERE -->
+        <div class="row justify-content-between gy-4 mt-4">
+          <div class="col-lg-8" data-aos="fade-up">
+            <div class="portfolio-description">
+              <h2>Here The Story</h2>
+              <h3>Roselle Planting</h3>
+              <p>
+                The first thing we did after our arrival was collect soil in recycled polybags while some of us arranged the old tyres to be used as vase for the roselle.
+                We worked in groups consisting of 3 - 4 students. Here are the benefits of roselle that we learned from our tour guide:
+              </p>
+              <p>
+                1. Helps lower the blood sugar when drinking the roselle tea.<br>
+                2. Rich in vitamin C which can boost the immune system and fight off the colds.<br>
+                3. Contain antioxidants that help protect the body's cell from damage caused by any free particals.<br>
+                4. Supports the weight loss where it help to reduce the absorption of fat and carbohydrates.<br>
+              </p>
+
+              <h3>Stingless Bee</h3>
+              <p>
+                At the stingless bee farm, we learned about the stingless bees and discovered that there are actually many different types. One thing I found interesting is that these bees have a kind of
+                built-in GPS that allow them to find their way home even after travelling far from their nest. However, if their hive is moved to a different location, the bees will
+                return to the original spot because their internal navigation system is programmed to that specific place.
+              </p>
+              <p>
+                We also had the chance to taste the bee bread which had a very unusual flavor and texture where it was soft and tended to stick to the palate of the mouth if eaten in large amounts. Although
+                the experience was interesting, I probably wouldn't choose to eat it again.
+              </p>
+
+              <p>
+                The honey, on the other hand was delicious. Surprisingly, stingless bee honey can cost nearly a thousand dollars for just a few liters. I felt grateful to have the opporunity to taste it as well.
+              </p>
+
+              <h3>Fishing</h3>
+              <p>
+                Another fun activity was fishing 🎣 at a small pond using simple tools such as bamboo stick, string, hook and bread as a bait. Unfortunately, I did not manage to catch any fish 🐟 and 
+                perhaps because my bamboo rod was a bit short! 
+              </p>
+              <p>
+                However, I used the remaining time to learn more about coffee plants with the tour guide which was equally informative. 
+              </p>
+
+              <h3>Paddy in Polybag</h3>
+              <p>
+               The last activity was planting paddy in polybags. We were supposed to do this in the evening. But unfortunately, the wheater wasn't great and it started pouring rain. So, we had a theoritical
+               session instead, where the tour guide explained the process to us. Planting paddy in a polybag is actually quite simple though it still requires careful attention.
+              </p>
+              <p>
+                The materials needed are: <br>
+                1. Polybags<br>
+                2. Soil (any type) can use cocopit as well <br>
+                3. Young paddy seedlings <br><br>
+
+                Note: It's important to maintain the water level at about 2/3 of the polybag as paddy needs plenty of water to grow.
+              </p>
+
+              <p>
+                We also had a chance to see the final product which is rice (beras) at their paddy plantation site. Surprisingly, the paddy plants were growing really well and looked healthy. It's a great innovation for the future
+                as it shows the paddy can be grown easily anywhere even in small spaces.
+              </p>
+
+              <h3>What I learned:</h3>
+              <p>
+                1. Team working<br>
+                2. New information about plants<br>
+                3. Planting innovation<br>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-info">
+              <h3>Program information</h3>
+              <ul>
+                <li><strong>Place</strong> Pena Agrofarm Pekan Nenas</li>
+                <li><strong>Club</strong> Agriculture Club</li>
+                <li><strong>Program date</strong> 14.12.2025</li>
+                <li><strong>Role</strong> Multimedia Unit</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  <!-- FOOTER - now properly placed at the end -->
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <p>The Future Depend on What You Do Today!</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/Aunisofia"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/aunisofia05"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">Auni Sofia</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          <!--Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distribuited by <a href="https://themewagon.com">ThemeWagon</a> -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

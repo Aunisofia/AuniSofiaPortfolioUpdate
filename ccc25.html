@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>CCC '25</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/duckfavicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* POLAROID CUSTOM STYLES - Menggantikan swiper slider */
+    .polaroid-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin: 30px 0 50px;
+      padding: 20px;
+    }
+    
+    .polaroid-card {
+      width: 300px;
+      background: #ffd966; /* Warna kuning */
+      padding: 15px 15px 25px 15px;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+    
+    .polaroid-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    /* LED Pink kat sisi */
+    .polaroid-card::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: 20px;
+      background: linear-gradient(45deg, #ff69b4, #ff1493, #ffd966, #ff1493);
+      background-size: 300% 300%;
+      z-index: -1;
+      animation: ledPink 3s ease infinite;
+      filter: blur(5px);
+      opacity: 0.8;
+    }
+    
+    /* efek glow tambahan */
+    .polaroid-card::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fff0f5, #ffe4e1, #fff0f5);
+      z-index: -1;
+      opacity: 0.5;
+    }
+    
+    @keyframes ledPink {
+      0% { background-position: 0% 50%; opacity: 0.7; }
+      50% { background-position: 100% 50%; opacity: 1; }
+      100% { background-position: 0% 50%; opacity: 0.7; }
+    }
+    
+    .polaroid-image {
+      width: 100%;
+      height: 250px;
+      background: #f0f0f0;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      border: 3px solid white;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+    }
+    
+    .polaroid-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .polaroid-caption {
+      text-align: center;
+      font-family: 'Poppins', cursive;
+      font-size: 1rem;
+      color: #8b4513;
+      padding: 5px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 20px;
+    }
+    
+    /* mengemas kini spacing */
+    .portfolio-details-slider {
+      display: none; /* hilangkan swiper asal */
+    }
+    
+    /* responsif untuk mobile */
+    @media (max-width: 768px) {
+      .polaroid-card {
+        width: 280px;
+      }
+    }
+  </style>
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex flex-column justify-content-center">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
+        <li><a href="index.html"><i class="bi bi-person navicon"></i><span>About</span></a></li>
+        <li><a href="index.html"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
+        <li><a href="index.html"><i class="bi bi-images navicon"></i><span>Features</span></a></li>
+        <li><a href="index.html"><i class="bi bi-hdd-stack navicon"></i><span>Programs</span></a></li>
+        <li><a href="index.html"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Program Details</li>
+          </ol>
+        </nav>
+        <h1>Code . Create . Connect</h1>
+      </div>
+    </div>
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up">
+
+        <!-- POLAROID GALLERY - 2 KAD SEGI EMPAT TEPAT WARNA KUNING DENGAN LED PINK -->
+            <div class="polaroid-gallery">
+            <!-- Polaroid 1: Gambar Catherine -->
+            <div class="polaroid-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="polaroid-image">
+                <!-- Gambar profile Catherine - PNG 1 -->
+                <img src="assets/img/ccc25/ccc1.jpg" alt="Catherine" width="300" height="250">
+                </div>
+                <div class="polaroid-caption">
+                <strong>CCC '25</strong><br>
+                </div>
+            </div>
+            
+            <!-- Polaroid 2: Gambar dengan info lengkap -->
+            <div class="polaroid-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="polaroid-image">
+                <!-- Gambar kedua - PNG 2 (guna file berbeza) -->
+                <img src="assets/img/ccc25/ccc2.jpg" alt="Catherine info" width="300" height="250">
+                </div>
+                <div class="polaroid-caption">
+                <strong>Code . Create . Connect 2025</strong><br>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Swiper slider asal - kita sembunyikan dengan CSS -->
+        <div class="portfolio-details-slider swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              },
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide">
+              <img src="assets/img/portfolio/app-1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/portfolio/product-1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/portfolio/branding-1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/img/portfolio/books-1.jpg" alt="">
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="row justify-content-between gy-4 mt-4">
+          <div class="col-lg-8" data-aos="fade-up">
+            <div class="portfolio-description">
+              <h2>Here The Story</h2>
+              <p>
+                CCC '25 is a program designed to help the first year students sharpen their C++ programming skills with the guidance from the senior students proficient in the language. 
+              </p>
+              <p>
+                Though it was a small scale program, the experience was incredibly meaningful for me. I had the opportunity to work closely with my team members  to find sources and prepare gifts for the winners of the Quizizz activities. 
+                It was rewarding to contribute to an initiative that supports junior students while celebrating their achievements.
+              <p>
+            </div>
+          </div>
+
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-info">
+              <h3>Program information</h3>
+              <ul>
+                <li><strong>PLACE</strong> Faculty of Computing</li>
+                <li><strong>CLUB</strong> PERSAKA</li>
+                <li><strong>PROGRAM DATE</strong> 17 January 2026</li>
+                <li><strong>ROLE</strong> Head of Gift Unit</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <p>The Future Depend on What You Do Today!</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-github"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">Auni Sofia</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          <!--Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distribuited by <a href="https://themewagon.com">ThemeWagon</a> -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Inisialisasi AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
+</body>
+
+</html>
